@@ -27,7 +27,6 @@ RankPulse automates the tracking of Google keyword ranking positions across the 
   - [Backend Startup](#backend-startup)
   - [Frontend Startup](#frontend-startup)
 - [SearchAPI.io Integration](#-searchapiio-integration)
-- [Testing & Reliability](#-testing--reliability)
 - [Future Enhancements](#-future-enhancements)
 - [License](#-license)
 
