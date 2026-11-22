@@ -70,15 +70,6 @@ RankPulse automates the tracking of Google keyword ranking positions across the 
 
 ## 📸 Application Screenshots
 
-> *The interface follows a clean, modern B2B SaaS design system with a light background (`#F7F8FA`), deep navy sidebar (`#111827`), indigo primary accents (`#4F46E5`), and high-contrast typography.*
-
-| Dashboard & SERP Analytics | Keyword Performance Table |
-|---|---|
-| Summary KPI cards, inverted-axis SERP trend line chart, and ranking distribution bars | Real-time position badges, rank change indicators, search URLs, and instant check actions |
-
-| Ranking History Deep Dive | Automated SERP Notifications |
-|---|---|
-| Historical position timelines and best-rank records over custom date ranges | Event-driven alerts for Top 3/Top 10 entries and significant SERP movements |
 
 ---
 
@@ -89,11 +80,11 @@ RankPulse automates the tracking of Google keyword ranking positions across the 
 - **Framework**: Spring Boot 3.4.3
 - **Web Layer**: Spring MVC / RESTful APIs
 - **Persistence**: Spring Data JPA, Hibernate 6.6
-- **Database**: MySQL 8.x (Production) & H2 Database (Local Dev & Testing)
+- **Database**: MySQL 8.x 
 - **HTTP Client**: Spring `RestClient` (SearchAPI.io Google Rank Tracking Engine)
 - **Scheduling**: Spring Task Scheduling (`@EnableScheduling`, cron-based)
 - **Build Tool**: Apache Maven 3.9+
-- **Testing**: JUnit 5, Mockito, Spring Boot Test, MockMvc
+- **Testing**: JUnit 5
 
 ### Frontend
 - **Framework**: React 19
@@ -283,26 +274,8 @@ RankPulse uses the `google_rank_tracking` search engine from [SearchAPI.io](http
 
 - **Engine**: `google_rank_tracking`
 - **SERP Depth**: Top 100 organic search results per query
-- **Authentication**: `Authorization: Bearer <API_KEY>`
 - **Domain Matching**: Matches the target domain against result domain, subdomains, and landing page URLs.
 - **Handling Unranked Keywords**: Queries not appearing in the top 100 organic results are cleanly stored with `position = NULL` and logged as unranked.
-
----
-
-## 🧪 Testing & Reliability
-
-The application features comprehensive unit and integration tests:
-
-```bash
-# Run backend test suite
-.\mvnw.cmd test
-```
-
-### Test Coverage Includes:
-- **`WebsiteServiceTest`**: Domain validation, CRUD operations, and duplicate domain exception enforcement.
-- **`KeywordServiceTest`**: Multi-keyword assignment, duplicate prevention, and DTO transformation.
-- **`RankCheckServiceTest`**: SERP domain matching, duplicate-check suppression, null handling for unranked queries, and alert triggers.
-- **`WebsiteControllerIntegrationTest`**: MockMvc integration tests verifying REST endpoints, CORS headers, and validation error payloads.
 
 ---
 
